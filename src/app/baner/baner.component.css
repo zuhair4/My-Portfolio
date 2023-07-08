@@ -1,0 +1,175 @@
+:host {
+    display: block;
+    padding: 4rem 2rem 6rem;
+    background-color: var(--dark-gray);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 50% 100%, 0% 95%);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.title {
+    font-size: 4rem;
+    padding: 0 0 2rem;
+    text-align: center;
+    font-style: italic;
+    color: var(--green);
+    text-decoration: underline;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.name {
+    grid-row: 3/4;
+    padding: 2rem;
+    color: white;
+    font-size: 2rem;
+    margin-top: 3rem;
+    outline: 1px solid white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.name span:nth-of-type(1) span {
+    font-size: 3rem;
+    color: var(--green);
+}
+
+.name span:nth-of-type(2) {
+    display: inline-block;
+    color: var(--green);
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 10px 0;
+    letter-spacing: 8px;
+    text-shadow: 10px 8px 10px var(--black);
+}
+
+.profile {
+    width: 300px;
+    height: 300px;
+    grid-row: 2/3;
+    margin: 0 auto;
+    position: relative;
+    clip-path: inset(0 round 0 0 25%);
+}
+
+.profile .profile-bg {
+    height: 65%;
+    width: 100%;
+    bottom: 0%;
+    position: absolute;
+    background-color: #2f3e46;
+    clip-path: inset(0 round 50% 0 0);
+}
+
+.profile img {
+    width: 130%;
+    height: 100%;
+    position: absolute;
+}
+
+/* PC */
+
+:host.pc {
+    padding: 4rem 2rem 10rem;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
+}
+
+:host.pc .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+:host.pc .title {
+    grid-column: 1/2;
+    padding: 0%;
+    margin: auto;
+    font-size: 5rem;
+    font-style: normal;
+    text-decoration: none;
+}
+
+:host.pc .profile {
+    grid-row: 1/3;
+    grid-column: 2/3;
+    width: 600px;
+    height: 600px;
+}
+
+:host.pc .name {
+    grid-row: 2/3;
+    width: 725px;
+    margin: auto;
+    margin-left: 0;
+    margin-bottom: 0;
+    height: max-content;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #263238;
+}
+.wrapper{
+  display: flex;
+  margin-left: 100px;
+  margin-right: 255px;
+}
+.wrapper .static-txt{
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts{
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  color: #068FFF;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+.dynamic-txts li span{
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #263238;
+  border-left: 2px solid #69F0AE;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
